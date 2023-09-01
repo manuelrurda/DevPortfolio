@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   border: solid red 1px;
-}
+} */
 html,
 body,
 :root {

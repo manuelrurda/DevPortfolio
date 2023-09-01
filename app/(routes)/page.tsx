@@ -5,8 +5,8 @@ import { FileText, Github, Linkedin } from "lucide-react";
 
 const HomePage = () => {
   return (
-    <Container>
-      <div className="flex-1 flex flex-row justify-center items-center">
+    <Container className="flex h-5/6 justify-center items-center">
+      <div className="flex-1 flex flex-col sm:flex-row justify-center items-center">
         {/* left */}
         <div className="flex-1 flex flex-col items-center justify-center h-full">
           {/* profile pic */}
