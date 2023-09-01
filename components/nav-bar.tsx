@@ -11,6 +11,11 @@ const NavBar = () => {
 
   const routes = [
     {
+      href: `/`,
+      label: "Home",
+      active: pathname === `/`,
+    },
+    {
       href: `/projects`,
       label: "Projects",
       active: pathname === `/projects`,
@@ -43,10 +48,8 @@ const NavBar = () => {
                 key={route.href}
                 href={route.href}
                 className={cn(
-                  "text-lg font-medium transition-colors hover:text-primary hover:text-gray-500",
-                  route.active
-                    ? "text-black dark:text-white"
-                    : "text-muted-foreground"
+                  "text-lg font-medium transition-colors hover:text-primary",
+                  route.active ? "text-black" : "text-gray-500"
                 )}
               >
                 {route.label}
