@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import HomeFeaturedProject from "@/components/home-featured-project";
 import PersonalInfo from "@/components/personal-info";
 
 const HomePage = () => {
@@ -8,7 +9,7 @@ const HomePage = () => {
         {/* left */}
         <PersonalInfo />
         {/* right */}
-        <div className="flex-1 bg-black h-full w-full">Right</div>
+        <HomeFeaturedProject />
       </div>
     </Container>
   );

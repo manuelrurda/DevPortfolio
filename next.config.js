@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
 
-module.exports = nextConfig
+//TODO: delete this domain
+const nextConfig = {
+  images: {
+    domains: ["techcrunch.com"],
+  },
+};
+
+module.exports = nextConfig;
