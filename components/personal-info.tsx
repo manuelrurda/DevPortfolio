@@ -1,3 +1,5 @@
+"use client";
+
 import { FileText, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 
@@ -51,7 +53,10 @@ const PersonalInfo = () => {
               />
             </a>
 
-            <a href="" target="_blank">
+            <a
+              href="https://manuelrurda-dev-portfolio.s3.us-west-1.amazonaws.com/resume.pdf"
+              target="_blank"
+            >
               <FileText
                 size={55}
                 color="white"
