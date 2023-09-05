@@ -29,7 +29,7 @@ const HomeFeaturedProject = async () => {
           <Image
             width={500}
             height={500}
-            src={featuredProject?.thumbnailUrl}
+            src={featuredProject?.thumbnailUrl || ""}
             alt="Featured Project"
             className="rounded-md object-center"
           />

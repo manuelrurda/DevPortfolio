@@ -10,7 +10,7 @@ const FeaturedProjectBillboard = async () => {
       <h1 className="font-bold text-3xl pb-3">{featuredProject?.name}</h1>
       <div className="flex flex-col gap-x-7 lg:flex-row items-center">
         <Image
-          src={featuredProject?.thumbnailUrl}
+          src={featuredProject?.thumbnailUrl || ""}
           alt={featuredProject?.name}
           width="500"
           height="200"
