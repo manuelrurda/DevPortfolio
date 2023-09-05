@@ -16,7 +16,7 @@ const FeaturedProjectBillboard = async () => {
           height="200"
           className="rounded-md max-h-80 my-3"
         />
-        <div className="flex-1 flex flex-col min-w-mi self-start">
+        <div className="flex-1 flex flex-col min-w-md self-start">
           <p className="text-gray-400 my-3">
             {featuredProject?.techTags.join(" • ")}
           </p>
