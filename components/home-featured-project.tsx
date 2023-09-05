@@ -1,41 +1,46 @@
 import Image from "next/image";
 
-const HomeFeaturedProject = () => {
+import getFeaturedProjectData from "@/actions/get-featured-project";
+import { Github } from "lucide-react";
+
+const HomeFeaturedProject = async () => {
+  const featuredProject = await getFeaturedProjectData();
+
   return (
     <div className="flex-1 flex flex-col items-center justify-center">
       <h1 className="self-start text-xl py-3 text-gray-500">
         ⭐ Featured Project ⭐
       </h1>
       <div className="flex flex-col shadow-xl rounded-xl w-full p-6">
-        <h2 className="text-2xl font-semibold">Project Name</h2>
-
+        <div className="my-3 flex flex-row justify-between">
+          <h2 className="text-2xl font-semibold">{featuredProject?.name}</h2>
+          <div className="flex flex-col self-end">
+            <a href={featuredProject?.githubUrl} target="_blank">
+              <Github
+                className="bg-black p-1 rounded-md mx-1 cursor-pointer"
+                color="white"
+                size={30}
+              />
+            </a>
+          </div>
+        </div>
         {/* thumbnail */}
         <div className="flex justify-center py-3">
           <Image
             width={500}
             height={500}
-            src="https://techcrunch.com/wp-content/uploads/2020/07/iOS-14.png"
+            src={featuredProject?.thumbnailUrl}
             alt="Featured Project"
+            className="rounded-md object-center"
           />
         </div>
 
         {/* project info */}
         <div>
           <p className=" text-gray-400 py-2">
-            NextJS • TypeScript • PostgresSQL • REST API's
+            {featuredProject?.techTags.join(" • ")}
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            pretium facilisis tortor in vestibulum. Donec finibus mauris eget
-            dui tempus, nec dignissim neque sollicitudin. Etiam mauris purus,
-            ultrices nec feugiat cursus, placerat porta elit. Nullam rutrum
-            augue erat, sit amet dapibus libero aliquam quis. Vivamus posuere
-            finibus egestas. Vivamus suscipit dui ac luctus condimentum. In in
-            felis aliquet, sollicitudin odio malesuada, ultrices arcu.
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-            posuere cubilia curae; Duis pulvinar metus massa, non dignissim
-            velit scelerisque id.
-          </p>
+          <p>{featuredProject?.description}</p>
         </div>
       </div>
     </div>
