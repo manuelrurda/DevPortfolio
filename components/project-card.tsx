@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               alt="img"
               width="200"
               height="200"
-              className="min-w-full h-full rounded-md"
+              className="min-w-full h-auto rounded-md w-auto"
             />
           </div>
 
