@@ -13,7 +13,9 @@ const HomeFeaturedProject = async () => {
       </h1>
       <div className="flex flex-col shadow-xl rounded-xl w-full p-6 group">
         <div className="flex flex-row justify-between">
-          <h2 className="text-2xl font-semibold">{featuredProject?.name}</h2>
+          <h2 className="text-xl md:text-2xl font-semibold">
+            {featuredProject?.name}
+          </h2>
         </div>
         {/* thumbnail */}
         <div className="flex justify-center py-3 relative">
@@ -52,7 +54,7 @@ const HomeFeaturedProject = async () => {
         </div>
 
         {/* project info */}
-        <div>
+        <div className="text-sm md:text-base">
           <p className=" text-gray-400 py-2">
             {featuredProject?.techTags.join(" • ")}
           </p>

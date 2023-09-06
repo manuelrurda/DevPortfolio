@@ -8,7 +8,9 @@ const FeaturedProjectBillboard = async () => {
 
   return (
     <div className="p-10">
-      <h1 className="font-bold text-3xl pb-3">{featuredProject?.name}</h1>
+      <h1 className="font-bold text-2xl md:text-3xl pb-3">
+        {featuredProject?.name}
+      </h1>
       <div className="flex flex-col gap-x-7 lg:flex-row items-center">
         <Image
           src={featuredProject?.thumbnailUrl || ""}
@@ -18,7 +20,7 @@ const FeaturedProjectBillboard = async () => {
           className="rounded-md max-h-80 my-3"
         />
         <div className="flex-1 flex flex-col xmin-w-md self-start">
-          <div>
+          <div className="text-sm md:text-base">
             <p className="text-gray-400 my-3">
               {featuredProject?.techTags.join(" • ")}
             </p>

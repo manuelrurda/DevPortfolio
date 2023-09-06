@@ -57,8 +57,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
           </div>
         </div>
-        <p className="text-gray-400">{techTags.join(" • ")}</p>
-        <p className="text-justify">{description}</p>
+        <div className="flex flex-col gap-y-3 text-sm md:text-base ">
+          <p className="text-gray-400">{techTags.join(" • ")}</p>
+          <p className="text-justify">{description}</p>
+        </div>
       </div>
     </div>
   );
