@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import getFeaturedProjectData from "@/actions/get-featured-project";
+import { Github, Link } from "lucide-react";
 
 const FeaturedProjectBillboard = async () => {
   const featuredProject = await getFeaturedProjectData();
@@ -16,11 +17,34 @@ const FeaturedProjectBillboard = async () => {
           height="200"
           className="rounded-md max-h-80 my-3"
         />
-        <div className="flex-1 flex flex-col min-w-md self-start">
-          <p className="text-gray-400 my-3">
-            {featuredProject?.techTags.join(" • ")}
-          </p>
-          <p className="text-justify">{featuredProject?.description}</p>
+        <div className="flex-1 flex flex-col xmin-w-md self-start">
+          <div>
+            <p className="text-gray-400 my-3">
+              {featuredProject?.techTags.join(" • ")}
+            </p>
+            <p className="text-justify">{featuredProject?.description}</p>
+          </div>
+          <div className="mt-10 self-end flex flex-row">
+            {featuredProject.githubUrl && (
+              <a href={featuredProject?.githubUrl} target="_blank">
+                <Github
+                  className="bg-black p-2 rounded-xl mx-1 cursor-pointer"
+                  color="white"
+                  size={55}
+                />
+              </a>
+            )}
+
+            {featuredProject.liveUrl && (
+              <a href={featuredProject?.liveUrl} target="_blank">
+                <Link
+                  className="bg-black p-2 rounded-xl mx-1 cursor-pointer"
+                  color="white"
+                  size={55}
+                />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>
