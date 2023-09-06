@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import MobileNavMenu from "@/components/mobile-nav-menu";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <NavBar className="hidden md:block" />
         <MobileNavMenu className="md:hidden" />
         {children}
+        <Footer />
       </body>
     </html>
   );
