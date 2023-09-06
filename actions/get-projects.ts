@@ -9,7 +9,6 @@ const getProjectsData = async () => {
   const rawConfigData = await getConfigData(octokit);
   // @ts-ignore
   const projects = JSON.parse(rawConfigData.data).projects;
-  console.log(projects);
   const rawProjectsData = await Promise.all(
     projects.map(async (projectName: string) => {
       return await octokit.request(
@@ -26,7 +25,6 @@ const getProjectsData = async () => {
       );
     })
   );
-  console.log(rawProjectsData);
 
   if (!rawProjectsData) {
     return undefined;
@@ -35,7 +33,6 @@ const getProjectsData = async () => {
   const projectsData = rawProjectsData.map((projectData) => {
     return JSON.parse(projectData.data);
   });
-  console.log(projectsData);
 
   return projectsData;
 };
