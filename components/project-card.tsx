@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveUrl,
 }) => {
   return (
-    <div className="shadow-lg inline-block min-w-[300px] max-w-md rounded-md min-h">
+    <div className="shadow-lg inline-block min-w-[300px] max-w-md rounded-md min-h h-full">
       <div className="flex flex-col justify-center align-middle p-5 gap-y-3">
         <h1 className="text-xl font-bold">{name}</h1>
         <Image

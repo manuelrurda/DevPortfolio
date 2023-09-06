@@ -7,12 +7,12 @@ const HomeFeaturedProject = async () => {
   const featuredProject = await getFeaturedProjectData();
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-center">
-      <h1 className="self-start text-xl py-3 text-gray-500">
+    <div className="flex-1 flex flex-col items-center justify-center gap-y-3 min-w-[350px]">
+      <h1 className="self-start text-xl pt-3 text-gray-500">
         ⭐ Featured Project ⭐
       </h1>
       <div className="flex flex-col shadow-xl rounded-xl w-full p-6">
-        <div className="my-3 flex flex-row justify-between">
+        <div className="flex flex-row justify-between">
           <h2 className="text-2xl font-semibold">{featuredProject?.name}</h2>
           <div className="flex flex-col self-end">
             <a href={featuredProject?.githubUrl} target="_blank">
@@ -40,7 +40,7 @@ const HomeFeaturedProject = async () => {
           <p className=" text-gray-400 py-2">
             {featuredProject?.techTags.join(" • ")}
           </p>
-          <p>{featuredProject?.description}</p>
+          <p className="text-justify">{featuredProject?.description}</p>
         </div>
       </div>
     </div>
