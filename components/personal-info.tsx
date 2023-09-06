@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const PersonalInfo = () => {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center h-full">
+    <div className="flex-1 flex flex-col items-center justify-center h-full px-5 md:px-0">
       {/* profile pic */}
       <div className="py-5">
         <Image
@@ -17,7 +17,7 @@ const PersonalInfo = () => {
       </div>
 
       {/* Name and Description */}
-      <div className="flex flex-col items-center border-b py-2">
+      <div className="flex flex-col items-center border-b py-2 text-center">
         <h1 className="py-1 text-3xl font-bold">
           Manuel Rodriguez Urdapilleta
         </h1>
