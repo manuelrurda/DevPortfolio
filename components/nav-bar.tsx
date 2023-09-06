@@ -1,39 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import Container from "@/components/container";
 import { cn } from "@/lib/utils";
+import getRoutes from "@/routes";
 
-const NavBar = () => {
-  const pathname = usePathname();
+interface NavBarProps {
+  className?: string;
+}
 
-  const routes = [
-    {
-      href: `/`,
-      label: "Home",
-      active: pathname === `/`,
-    },
-    {
-      href: `/projects`,
-      label: "Projects",
-      active: pathname === `/projects`,
-    },
-    {
-      href: `/experience`,
-      label: "Experience",
-      active: pathname === `/experience`,
-    },
-    {
-      href: `/contact`,
-      label: "Contact",
-      active: pathname === `/contact`,
-    },
-  ];
-
+const NavBar: React.FC<NavBarProps> = ({ className }) => {
+  const routes = getRoutes();
   return (
-    <div className="border-b p-2">
+    <div className={cn("border-b p-2", className)}>
       <Container>
         <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
           <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
