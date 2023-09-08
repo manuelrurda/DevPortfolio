@@ -1,32 +1,26 @@
-import { Octokit } from "octokit";
-import getConfigData from "./get-config-data";
-
-const octokit = new Octokit({
-  auth: process.env.GITHUB_ACCESS_TOKEN,
-});
-
 const getFeaturedProjectData = async (rawConfigData: configData) => {
   const projectName = rawConfigData.featuredProject;
 
-  const req = await octokit.request(
-    `GET /repos/{owner}/{repo}/contents/{path}`,
-    {
-      owner: "manuelrurda",
-      repo: projectName,
-      path: "devPortfolioConfig.json",
-      headers: {
-        "X-GitHub-Api-Version": "2022-11-28",
-        accept: "application/vnd.github.raw",
-      },
-    }
-  );
+  const params = {
+    owner: "manuelrurda",
+    repo: projectName,
+    path: "devPortfolioConfig.json",
+  };
 
-  if (!req) {
-    return undefined;
-  }
-  // @ts-ignore
-  const projectData = JSON.parse(req.data);
-  return projectData;
+  const url = `https://api.github.com/repos/${params.owner}/${params.repo}/contents/${params.path}`;
+
+  const req = await fetch(url, {
+    headers: {
+      accept: "application/vnd.github.raw",
+    },
+    next: {
+      revalidate: 10,
+    },
+  });
+
+  const jsonData = await req.json();
+
+  return jsonData;
 };
 
 export default getFeaturedProjectData;
