@@ -9,7 +9,7 @@ const FeaturedProjectBillboard = async () => {
   const featuredProject = await getFeaturedProjectData();
 
   return (
-    <div className="p-10">
+    <div className="p-5">
       <h1 className="font-bold text-2xl md:text-3xl pb-3">
         {featuredProject?.name}
       </h1>
