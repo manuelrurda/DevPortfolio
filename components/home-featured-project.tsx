@@ -3,11 +3,13 @@ import Image from "next/image";
 import getFeaturedProjectData from "@/actions/get-featured-project";
 import { Github, Link } from "lucide-react";
 
-export const revalidate = 600;
+interface HomeFeaturedProjectProps {
+  featuredProject: ProjectData;
+}
 
-const HomeFeaturedProject = async () => {
-  const featuredProject = await getFeaturedProjectData();
-
+const HomeFeaturedProject: React.FC<HomeFeaturedProjectProps> = async ({
+  featuredProject,
+}) => {
   return (
     <div className="flex-1 flex flex-col items-center justify-center gap-y-3 min-w-[350px]">
       <h1 className="self-start text-xl pt-3 text-gray-500">
@@ -32,7 +34,7 @@ const HomeFeaturedProject = async () => {
           </div>
           <div className="opacity-0 group-hover:opacity-80 transition absolute w-1/2 h-1/2 top-1/4 left-1/4">
             <div className="flex gap-x-6 justify-center">
-              {featuredProject.githubUrl && (
+              {featuredProject?.githubUrl && (
                 <a href={featuredProject.githubUrl} target="_blank">
                   <Github
                     className="bg-black p-2 rounded-xl mx-1 cursor-pointer"
@@ -42,7 +44,7 @@ const HomeFeaturedProject = async () => {
                 </a>
               )}
 
-              {featuredProject.liveUrl && (
+              {featuredProject?.liveUrl && (
                 <a href={featuredProject.liveUrl} target="_blank">
                   <Link
                     className="bg-black p-2 rounded-xl mx-1 cursor-pointer"

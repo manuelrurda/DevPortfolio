@@ -3,11 +3,13 @@ import Image from "next/image";
 import getFeaturedProjectData from "@/actions/get-featured-project";
 import { Github, Link } from "lucide-react";
 
-export const revalidate = 600;
+interface FeaturedProjectBillboardProps {
+  featuredProject: ProjectData;
+}
 
-const FeaturedProjectBillboard = async () => {
-  const featuredProject = await getFeaturedProjectData();
-
+const FeaturedProjectBillboard: React.FC<
+  FeaturedProjectBillboardProps
+> = async ({ featuredProject }) => {
   return (
     <div className="p-5">
       <h1 className="font-bold text-2xl md:text-3xl pb-3">

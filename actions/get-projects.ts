@@ -5,12 +5,8 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_ACCESS_TOKEN,
 });
 
-export const revalidate = 600;
-
-const getProjectsData = async () => {
-  const rawConfigData = await getConfigData(octokit);
-  // @ts-ignore
-  const projects = JSON.parse(rawConfigData.data).projects;
+const getProjectsData = async (rawConfigData: configData) => {
+  const projects = rawConfigData.projects;
   const rawProjectsData = await Promise.all(
     projects.map(async (projectName: string) => {
       return await octokit.request(
@@ -31,10 +27,12 @@ const getProjectsData = async () => {
   if (!rawProjectsData) {
     return undefined;
   }
-  // @ts-ignore
-  const projectsData = rawProjectsData.map((projectData) => {
-    return JSON.parse(projectData.data);
-  });
+
+  const projectsData: ProjectData[] = rawProjectsData.map(
+    (projectData: any) => {
+      return JSON.parse(projectData.data);
+    }
+  );
 
   return projectsData;
 };
