@@ -5,6 +5,8 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_ACCESS_TOKEN,
 });
 
+export const revalidate = 600;
+
 const getFeaturedProjectData = async () => {
   const rawConfigData = await getConfigData(octokit);
   // @ts-ignore

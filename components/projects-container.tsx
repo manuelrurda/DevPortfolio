@@ -1,6 +1,8 @@
 import getProjectsData from "@/actions/get-projects";
 import ProjectCard from "./project-card";
 
+export const revalidate = 600;
+
 const ProjectsContainer = async () => {
   const projects = await getProjectsData();
   return (

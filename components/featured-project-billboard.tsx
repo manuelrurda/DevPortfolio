@@ -3,6 +3,8 @@ import Image from "next/image";
 import getFeaturedProjectData from "@/actions/get-featured-project";
 import { Github, Link } from "lucide-react";
 
+export const revalidate = 600;
+
 const FeaturedProjectBillboard = async () => {
   const featuredProject = await getFeaturedProjectData();
 

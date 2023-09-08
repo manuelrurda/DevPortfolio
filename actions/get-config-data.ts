@@ -1,5 +1,7 @@
 import { Octokit } from "octokit";
 
+export const revalidate = 600;
+
 const getConfigData = async (octokit: Octokit) => {
   const req = await octokit.request(
     `GET /repos/{owner}/{repo}/contents/{path}`,
