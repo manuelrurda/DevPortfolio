@@ -1,6 +1,3 @@
-import Image from "next/image";
-
-import getFeaturedProjectData from "@/actions/get-featured-project";
 import { Github, Link } from "lucide-react";
 
 interface FeaturedProjectBillboardProps {
@@ -16,7 +13,7 @@ const FeaturedProjectBillboard: React.FC<
         {featuredProject?.name}
       </h1>
       <div className="flex flex-col gap-x-7 lg:flex-row items-center">
-        <Image
+        <img
           src={featuredProject?.thumbnailUrl || ""}
           alt={featuredProject?.name}
           width="500"

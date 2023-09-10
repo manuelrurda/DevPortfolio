@@ -1,6 +1,3 @@
-import Image from "next/image";
-
-import getFeaturedProjectData from "@/actions/get-featured-project";
 import { Github, Link } from "lucide-react";
 
 interface HomeFeaturedProjectProps {
@@ -24,7 +21,7 @@ const HomeFeaturedProject: React.FC<HomeFeaturedProjectProps> = async ({
         {/* thumbnail */}
         <div className="flex justify-center py-3 relative">
           <div className="after:w-full after:h-full after:left-0 after:top-0 after:absolute after:rounded-md group-hover:after:bg-white group-hover:after:opacity-70 transition">
-            <Image
+            <img
               width={500}
               height={500}
               src={featuredProject?.thumbnailUrl || ""}

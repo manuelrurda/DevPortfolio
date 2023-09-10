@@ -1,14 +1,13 @@
 "use client";
 
 import { FileText, Github, Linkedin } from "lucide-react";
-import Image from "next/image";
 
 const PersonalInfo = () => {
   return (
     <div className="flex-1 flex flex-col items-center justify-center h-full px-5 md:px-0">
       {/* profile pic */}
       <div className="py-5">
-        <Image
+        <img
           width="300"
           height="300"
           src="/images/avatar.png"

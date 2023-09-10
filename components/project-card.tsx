@@ -1,5 +1,4 @@
 import { Github, Link } from "lucide-react";
-import Image from "next/image";
 
 interface ProjectCardProps {
   name: string;
@@ -24,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <h1 className="text-xl font-bold">{name}</h1>
         <div className="relative">
           <div className="after:w-full after:h-full after:left-0 after:top-0 after:absolute after:rounded-md group-hover:after:bg-white group-hover:after:opacity-70 transition">
-            <Image
+            <img
               src={imageSrc}
               alt="img"
               width="200"
