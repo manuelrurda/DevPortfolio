@@ -14,7 +14,7 @@ const getProjectsData = async (rawConfigData: configData) => {
           accept: "application/vnd.github.raw",
         },
         next: {
-          revalidate: 10,
+          revalidate: 3600,
         },
       });
 
