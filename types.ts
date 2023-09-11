@@ -10,6 +10,7 @@ interface ProjectData {
 interface configData {
   featuredProject: string;
   projects: string[];
+  timelineElements: timelineElementData[];
 }
 
 interface timelineElementData {
