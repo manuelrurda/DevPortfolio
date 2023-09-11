@@ -11,3 +11,14 @@ interface configData {
   featuredProject: string;
   projects: string[];
 }
+
+interface timelineElementData {
+  id: number;
+  title: string;
+  company?: string;
+  logoUrl?: string;
+  location: string;
+  description?: string;
+  date: string;
+  icon: "work" | "education" | "freelance";
+}

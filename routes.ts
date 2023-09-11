@@ -13,11 +13,11 @@ const getRoutes = () => {
       label: "Projects",
       active: pathname === `/projects`,
     },
-    // {
-    //   href: `/experience`,
-    //   label: "Experience",
-    //   active: pathname === `/experience`,
-    // },
+    {
+      href: `/experience`,
+      label: "Experience",
+      active: pathname === `/experience`,
+    },
     // {
     //   href: `/contact`,
     //   label: "Contact",
