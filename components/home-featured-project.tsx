@@ -8,7 +8,7 @@ const HomeFeaturedProject: React.FC<HomeFeaturedProjectProps> = async ({
   featuredProject,
 }) => {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center gap-y-3 min-w-[350px]">
+    <div className="flex-1 flex flex-col items-center justify-center gap-y-3 min-w-[350px] animate-bounce-horizontal-inverse">
       <h1 className="self-start text-xl pt-3 text-gray-500">
         ⭐ Featured Project ⭐
       </h1>
@@ -23,8 +23,11 @@ const HomeFeaturedProject: React.FC<HomeFeaturedProjectProps> = async ({
           <div className="after:w-full after:h-full after:left-0 after:top-0 after:absolute after:rounded-md group-hover:after:bg-white group-hover:after:opacity-70 transition">
             <img
               width={500}
-              height={500}
-              src={featuredProject?.thumbnailUrl || ""}
+              height={200}
+              src={
+                featuredProject?.thumbnailUrl ||
+                "https://via.placeholder.com/640x360"
+              }
               alt="Featured Project"
               className="rounded-md object-center"
             />

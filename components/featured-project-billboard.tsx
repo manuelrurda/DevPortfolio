@@ -14,7 +14,10 @@ const FeaturedProjectBillboard: React.FC<
       </h1>
       <div className="flex flex-col gap-x-7 lg:flex-row items-center">
         <img
-          src={featuredProject?.thumbnailUrl || ""}
+          src={
+            featuredProject?.thumbnailUrl ||
+            "https://via.placeholder.com/640x360"
+          }
           alt={featuredProject?.name}
           width="500"
           height="200"

@@ -13,7 +13,7 @@ const ProjectsPage = async () => {
   return (
     <div className="pb-7">
       <div className="self-start bg-gradient-to-tl from-rose-400 via-fuchsia-400 to-indigo-500 w-full p-10">
-        <Container className="flex h-5/6 justify-center bg-white rounded-lg shadow-lg">
+        <Container className="flex h-5/6 justify-center bg-white rounded-lg shadow-lg animate-bounce-vertical">
           <div className="flex-1 flex flex-col sm:flex-row justify-center items-center">
             {/* featured project */}
             <div>

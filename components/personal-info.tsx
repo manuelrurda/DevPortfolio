@@ -4,7 +4,7 @@ import { FileText, Github, Linkedin } from "lucide-react";
 
 const PersonalInfo = () => {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center h-full px-5 md:px-0">
+    <div className="flex-1 flex flex-col items-center justify-center h-full px-5 md:px-0 animate-bounce-horizontal">
       {/* profile pic */}
       <div className="py-5">
         <img

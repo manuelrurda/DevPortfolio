@@ -1,4 +1,7 @@
+"use client";
+
 import { Github, Link } from "lucide-react";
+import { Fade } from "react-awesome-reveal";
 
 interface ProjectCardProps {
   name: string;
@@ -18,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveUrl,
 }) => {
   return (
-    <div className="shadow-lg inline-block min-w-[300px] max-w-md rounded-md min-h h-full group">
+    <Fade className="shadow-lg inline-block min-w-[300px] max-w-md rounded-md min-h h-full group">
       <div className="flex flex-col justify-start align-middle p-5 gap-y-3 w-fit h-full">
         <h1 className="text-xl font-bold">{name}</h1>
         <div className="relative">
@@ -61,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <p className="text-justify">{description}</p>
         </div>
       </div>
-    </div>
+    </Fade>
   );
 };
 
