@@ -25,16 +25,16 @@
 
 .animate-bounce-horizontal {
   visibility: visible;
-  -webkit-animation: cd-bounce-horizontal 0.6s;
-  -moz-animation: cd-bounce-horizontal 0.6s;
-  animation: cd-bounce-horizontal 0.6s;
+  -webkit-animation: cd-bounce-horizontal 0.8s;
+  -moz-animation: cd-bounce-horizontal 0.8s;
+  animation: cd-bounce-horizontal 0.8s;
 }
 
 .animate-bounce-horizontal-inverse {
   visibility: visible;
-  -webkit-animation: cd-bounce-horizontal-inverse 0.6s;
-  -moz-animation: cd-bounce-horizontal-inverse 0.6s;
-  animation: cd-bounce-horizontal-inverse 0.6s;
+  -webkit-animation: cd-bounce-horizontal-inverse 0.8s;
+  -moz-animation: cd-bounce-horizontal-inverse 0.8s;
+  animation: cd-bounce-horizontal-inverse 0.8s;
 }
 
 .animate-bounce-vertical {
