@@ -2,7 +2,11 @@
 
 import { FileText, Github, Linkedin } from "lucide-react";
 
-const PersonalInfo = () => {
+interface PersonalInfoProps {
+  jobTitle: string;
+}
+
+const PersonalInfo: React.FC<PersonalInfoProps> = ({ jobTitle }) => {
   return (
     <div className="flex-1 flex flex-col items-center justify-center h-full px-5 md:px-0 animate-bounce-horizontal">
       {/* profile pic */}
@@ -20,9 +24,7 @@ const PersonalInfo = () => {
         <h1 className="py-1 text-3xl font-bold">
           Manuel Rodriguez Urdapilleta
         </h1>
-        <p className="text-xl font-semibold py-1">
-          Android Developer Trainee @ Dexcom
-        </p>
+        <p className="text-xl font-semibold py-1">{jobTitle}</p>
       </div>
       <div className="flex flex-row py-5">
         <div className="bg-black w-2"></div>
